@@ -26,159 +26,164 @@ type LearningData = {
   conversations: Conversation[];
 };
 
-type ProductCategory = {
-  id: number;
-  name: string;
-  items: Product[];
-};
-
-type Product = {
+type Service = {
   id: number;
   name: string;
   description: string;
+  features: string[];
   price: string;
   category: string;
-  isAvailable: boolean;
+  deliveryTime: string;
 };
 
-const cardapio: ProductCategory[] = [
+const services: Service[] = [
   {
     id: 1,
-    name: "🍗 Salgados Tradicionais",
-    items: [
-      {
-        id: 101,
-        name: "Coxinha",
-        description: "Recheio de frango desfiado temperado",
-        price: "R$ 6,50",
-        category: "salgados",
-        isAvailable: true,
-      },
-      {
-        id: 102,
-        name: "Quibe",
-        description: "Carne moída com trigo e hortelã",
-        price: "R$ 6,50",
-        category: "salgados",
-        isAvailable: true,
-      },
-      {
-        id: 103,
-        name: "Empada",
-        description: "Frango ou palmito (consultar)",
-        price: "R$ 6,00",
-        category: "salgados",
-        isAvailable: true,
-      },
-      {
-        id: 104,
-        name: "Risole",
-        description: "Carne ou frango (consultar)",
-        price: "R$ 6,00",
-        category: "salgados",
-        isAvailable: true,
-      },
+    name: "🌐 Landing Pages",
+    description: "Páginas de conversão otimizadas para capturar leads e vendas",
+    features: [
+      "Design responsivo e moderno",
+      "Otimização para SEO",
+      "Integração com formulários",
+      "Análise de métricas (Google Analytics)",
+      "Carregamento rápido",
+      "Mobile-first",
     ],
+    price: "A partir de R$ 1.500",
+    category: "desenvolvimento",
+    deliveryTime: "5-7 dias úteis",
   },
   {
     id: 2,
-    name: "🥐 Especiais da Casa",
-    items: [
-      {
-        id: 201,
-        name: "Enroladinho de Salsicha",
-        description: "Massa crocante com salsicha premium",
-        price: "R$ 7,00",
-        category: "especiais",
-        isAvailable: true,
-      },
-      {
-        id: 202,
-        name: "Bolinha de Queijo",
-        description: "Queijo muçarela derretido",
-        price: "R$ 6,50",
-        category: "especiais",
-        isAvailable: true,
-      },
-      {
-        id: 203,
-        name: "Pastel de Forno",
-        description: "Carne, queijo ou pizza (consultar)",
-        price: "R$ 7,50",
-        category: "especiais",
-        isAvailable: true,
-      },
+    name: "🚀 Sites Institucionais",
+    description: "Presença digital completa para sua empresa",
+    features: [
+      "Até 10 páginas",
+      "Sistema administrativo",
+      "Galeria de imagens",
+      "Blog integrado",
+      "Formulário de contato",
+      "Google Maps",
     ],
+    price: "A partir de R$ 3.000",
+    category: "desenvolvimento",
+    deliveryTime: "10-15 dias úteis",
   },
   {
     id: 3,
-    name: "🍩 Doces & Sobremesas",
-    items: [
-      {
-        id: 301,
-        name: "Brigadeiro",
-        description: "Tradicional ou gourmet",
-        price: "R$ 5,50",
-        category: "doces",
-        isAvailable: true,
-      },
-      {
-        id: 302,
-        name: "Bolinho de Chuva",
-        description: "Crocante por fora, macio por dentro",
-        price: "R$ 5,00",
-        category: "doces",
-        isAvailable: true,
-      },
-      {
-        id: 303,
-        name: "Torta Doce",
-        description: "Variedade conforme o dia",
-        price: "R$ 8,00",
-        category: "doces",
-        isAvailable: true,
-      },
+    name: "🤖 Automações",
+    description: "Automatize processos e aumente sua produtividade",
+    features: [
+      "Chatbots personalizados",
+      "Automação de e-mails",
+      "Integração com APIs",
+      "Workflows customizados",
+      "Relatórios automáticos",
+      "Notificações inteligentes",
     ],
+    price: "Sob consulta",
+    category: "automação",
+    deliveryTime: "7-14 dias úteis",
   },
   {
     id: 4,
-    name: "🥖 Pães & Complementos",
-    items: [
-      {
-        id: 401,
-        name: "Pão Francês",
-        description: "Fresquinho, feito no dia",
-        price: "R$ 1,50/un",
-        category: "paes",
-        isAvailable: true,
-      },
-      {
-        id: 402,
-        name: "Pão de Queijo",
-        description: "Tradicional mineiro",
-        price: "R$ 6,00",
-        category: "paes",
-        isAvailable: true,
-      },
+    name: "📱 Cardápios Digitais",
+    description: "Cardápios interativos para restaurantes e bares",
+    features: [
+      "QR Code personalizado",
+      "Atualização em tempo real",
+      "Fotos em alta qualidade",
+      "Categorias organizadas",
+      "Modo offline",
+      "Integração com WhatsApp",
     ],
+    price: "A partir de R$ 800/mês",
+    category: "soluções-digitais",
+    deliveryTime: "3-5 dias úteis",
+  },
+  {
+    id: 5,
+    name: "⚡ MVPs (Produto Mínimo Viável)",
+    description: "Valide sua ideia rapidamente no mercado",
+    features: [
+      "Desenvolvimento ágil",
+      "Funcionalidades essenciais",
+      "Testes com usuários reais",
+      "Feedback estruturado",
+      "Escalabilidade planejada",
+      "Documentação técnica",
+    ],
+    price: "Sob consulta",
+    category: "desenvolvimento",
+    deliveryTime: "15-30 dias úteis",
+  },
+  {
+    id: 6,
+    name: "🔧 Microserviços",
+    description: "Soluções específicas para necessidades pontuais",
+    features: [
+      "APIs customizadas",
+      "Integrações específicas",
+      "Sistemas modulares",
+      "Alta disponibilidade",
+      "Documentação completa",
+      "Suporte técnico",
+    ],
+    price: "Sob consulta",
+    category: "desenvolvimento",
+    deliveryTime: "Varia conforme complexidade",
+  },
+  {
+    id: 7,
+    name: "💬 PageBot",
+    description: "Chatbots inteligentes para seu site ou WhatsApp",
+    features: [
+      "Respostas automáticas 24/7",
+      "Integração com WhatsApp Business",
+      "Qualificação de leads",
+      "Agendamento automático",
+      "Suporte multilíngue",
+      "Análise de conversas",
+    ],
+    price: "A partir de R$ 300/mês",
+    category: "automação",
+    deliveryTime: "3-7 dias úteis",
+  },
+  {
+    id: 8,
+    name: "🎨 Sites Personalizados",
+    description: "Soluções únicas sob medida para seu negócio",
+    features: [
+      "Design exclusivo",
+      "Funcionalidades customizadas",
+      "Otimização avançada",
+      "Treinamento da equipe",
+      "Manutenção mensal",
+      "Hospedagem incluída",
+    ],
+    price: "Sob consulta",
+    category: "desenvolvimento",
+    deliveryTime: "20-40 dias úteis",
   },
 ];
 
 const quickReplies = [
-  "📋 Ver cardápio completo",
-  "🛒 Fazer um pedido",
-  "⏳ Tempo de preparo",
-  "💳 Formas de pagamento",
-  "📍 Localização",
-  "📞 Falar com atendente",
-  "🎉 Promoções do dia",
-  "🥖 Tem pão francês?",
+  "👋 Sobre a Norte Digital",
+  "🌐 Serviços de desenvolvimento",
+  "🤖 Automações disponíveis",
+  "📱 Cardápios digitais",
+  "⚡ MVP - Como funciona?",
+  "💬 PageBot (Chatbot)",
+  "💰 Valores e orçamentos",
+  "📞 Falar com especialista",
+  "⏱️ Tempo de entrega",
+  "🛠️ Microserviços",
 ];
 
 const useLearningData = () => {
   const [learningData, setLearningData] = useState<LearningData>(() => {
     if (typeof window !== "undefined") {
-      const savedData = localStorage.getItem("minisalgados-chatbot-learning");
+      const savedData = localStorage.getItem("nortedigital-chatbot-learning");
       return savedData
         ? JSON.parse(savedData)
         : {
@@ -206,7 +211,7 @@ const useLearningData = () => {
 
         if (typeof window !== "undefined") {
           localStorage.setItem(
-            "minisalgados-chatbot-learning",
+            "nortedigital-chatbot-learning",
             JSON.stringify(updated)
           );
         }
@@ -232,7 +237,7 @@ const useLearningData = () => {
 
         if (typeof window !== "undefined") {
           localStorage.setItem(
-            "minisalgados-chatbot-learning",
+            "nortedigital-chatbot-learning",
             JSON.stringify(updated)
           );
         }
@@ -254,7 +259,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "👋 Olá! Seja bem-vindo(a) à Mini Salgados & Grandes Desejos ✨\n\nSalgados artesanais, quentinhos e feitos com amor 😋\n\nComo posso te ajudar hoje?",
+      text: "👋 Olá! Seja bem-vindo(a) à **Norte Digital** – Sua parceira em soluções digitais! 🚀\n\nOferecemos serviços completos de desenvolvimento web, automações e muito mais para alavancar seu negócio!\n\nComo posso te ajudar hoje?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -264,7 +269,6 @@ export default function Chatbot() {
   const [isTyping, setIsTyping] = useState(false);
   const [isAudioEnabled, setIsAudioEnabled] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [currentOrder, setCurrentOrder] = useState<Product[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const speechSynthesisRef = useRef<SpeechSynthesisUtterance | null>(null);
   const recognitionRef = useRef<any>(null);
@@ -364,169 +368,200 @@ export default function Chatbot() {
   const getCustomResponse = (userMessage: string) => {
     const lowerMessage = userMessage.toLowerCase();
 
-    // Saudação inicial
+    // Saudação inicial e sobre a empresa
     if (
-      /^(olá|ola|oi|bom\s*dia|boa\s*tarde|boa\s*noite|hello|hey|oi\s*tudo\s*bem)/i.test(
+      /^(olá|ola|oi|bom\s*dia|boa\s*tarde|boa\s*noite|hello|hey|oi\s*tudo\s*bem|sobre\s*a\s*empresa|quem\s*são|norte\s*digital)/i.test(
         lowerMessage
       )
     ) {
-      return "👋 Olá! Seja bem-vindo(a) à Mini Salgados & Grandes Desejos ✨\n\nSalgados artesanais, quentinhos e feitos com amor 😋\n\nComo posso te ajudar hoje?";
+      return `🏢 **SOBRE A NORTE DIGITAL**\n\nSomos uma empresa especializada em soluções digitais completas para negócios de todos os tamanhos.\n\n🔹 **Missão:** Transformar ideias em realidade digital\n🔹 **Visão:** Ser referência em inovação tecnológica no Norte do país\n🔹 **Valores:** Qualidade, agilidade, transparência e parceria\n\nCom expertise em desenvolvimento web, automações e estratégias digitais, ajudamos empresas a crescerem no mundo digital! 🚀`;
     }
 
-    // Cardápio completo
+    // Todos os serviços
     if (
-      /(cardápio|cardapio|menu|o\s*que\s*tem|produtos|ver\s*cardápio)/i.test(
+      /(serviços|o\s*que\s*fazem|o\s*que\s*faz|o\s*que\s*vendem|portfolio|catálogo)/i.test(
         lowerMessage
       )
     ) {
-      let response = "📋 **NOSSO CARDÁPIO COMPLETO** ✨\n\n";
+      let response = "🚀 **NOSSOS SERVIÇOS**\n\n";
 
-      cardapio.forEach((category) => {
-        response += `**${category.name}**\n`;
-        category.items.forEach((item) => {
-          const emoji = item.isAvailable ? "✅" : "⏳";
-          response += `${emoji} ${item.name} - ${item.price}\n   ${item.description}\n`;
-        });
-        response += "\n";
+      services.forEach((service) => {
+        response += `${service.name}\n`;
+        response += `📝 ${service.description}\n`;
+        response += `💰 ${service.price}\n`;
+        response += `⏱️ Entrega: ${service.deliveryTime}\n\n`;
       });
 
-      response += "\n😋 *Todos feitos na hora, com ingredientes selecionados!*";
+      response += "💬 *Gostaria de saber mais sobre algum serviço específico?*";
       return response;
     }
 
-    // Valores / Preços
+    // Serviços específicos
+    if (/(landing\s*page|landingpage|lp)/i.test(lowerMessage)) {
+      const service = services[0];
+      return `🌐 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n📞 *Quer desenvolver uma landing page? Fale com nosso especialista!*`;
+    }
+
     if (
-      /(quanto\s*custa|preço|preco|valor|quanto\s*é|quanto\s*vale)/i.test(
+      /(site\s*institucional|site\s*empresa|site\s*completo)/i.test(
         lowerMessage
       )
     ) {
-      return "💰 Os valores variam de acordo com o produto escolhido.\n\nVou te mostrar nosso cardápio atualizado para você conferir preços e opções disponíveis 😍";
+      const service = services[1];
+      return `🏢 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n💡 *Ideal para empresas que querem uma presença digital profissional!*`;
     }
 
-    // Combo ou unidade
+    if (/(automaç[aã]o|automatizar|bot|robô)/i.test(lowerMessage)) {
+      const service = services[2];
+      return `🤖 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n⚡ *Automatize processos e ganhe tempo para focar no que realmente importa!*`;
+    }
+
     if (
-      /(combo|unidade|separado|individual|como\s*funciona)/i.test(lowerMessage)
+      /(card[aá]pio\s*digital|cardapio|restaurante|bar)/i.test(lowerMessage)
     ) {
-      return "📦 Trabalhamos com unidades, porções e combos, conforme o item do cardápio.\n\nCada produto possui a descrição certinha com quantidade incluída 😊";
+      const service = services[3];
+      return `📱 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n🍽️ *Perfeito para restaurantes, bares, lanchonetes e food trucks!*`;
     }
 
-    // Tamanho dos produtos
-    if (/(tamanho|grande|mini|pequeno)/i.test(lowerMessage)) {
-      return "📏 Temos opções mini e tamanho tradicional, conforme o produto.\n\nTodos os detalhes aparecem na descrição de cada item do cardápio 😉";
-    }
-
-    // Sabores disponíveis
-    if (/(sabores|opções|tem\s*o\s*que|quais\s*tem)/i.test(lowerMessage)) {
-      return "😋 Nossos sabores variam conforme o cardápio do dia.\n\nVou te mostrar agora as opções disponíveis para hoje 👇";
-    }
-
-    // Disponibilidade
-    if (/(disponível|tem\s*hoje|o\s*que\s*tem|estoque)/i.test(lowerMessage)) {
-      return "✅ Os produtos disponíveis dependem do cardápio do dia.\n\nConfira abaixo tudo o que está sendo preparado hoje, sempre fresquinho 🔥";
-    }
-
-    // Pronta entrega
     if (
-      /(pronta\s*entrega|já\s*pronto|entrega\s*imediata)/i.test(lowerMessage)
-    ) {
-      return "❌ Não trabalhamos com pronta entrega.\n\nTodos os nossos salgados são preparados na hora do pedido, garantindo qualidade e frescor 💛";
-    }
-
-    // Tempo de preparo
-    if (
-      /(tempo|demora|quanto\s*tempo|preparação|rapidez)/i.test(lowerMessage)
-    ) {
-      return "⏳ O tempo médio de preparo é de 15 a 30 minutos,\n\npodendo variar conforme a quantidade do pedido e a demanda do momento.";
-    }
-
-    // Promoções
-    if (/(promoção|promocao|oferta|desconto|especial)/i.test(lowerMessage)) {
-      return "🎉 As promoções variam conforme o dia.\n\nCaso tenha alguma oferta ativa, ela aparecerá destacada no cardápio 😉";
-    }
-
-    // Pãozinho / Pão francês
-    if (
-      /(pãozinho|paozinho|pão\s*francês|pao\s*frances|pão\s*diário)/i.test(
+      /(mvp|produto\s*m[ií]nimo|validaç[aã]o|testar\s*ideia)/i.test(
         lowerMessage
       )
     ) {
-      return "🥖 Sim! Temos pão francês fresquinho, preparado no dia, disponível no cardápio 😍";
+      const service = services[4];
+      return `⚡ **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n💡 *Não gaste tempo e dinheiro desenvolvendo algo que os clientes não querem!*`;
     }
 
-    // Formas de pagamento
     if (
-      /(pagamento|cartão|cartao|pix|dinheiro|débito|crédito|maquininha)/i.test(
+      /(microserviço|api|integraç[aã]o|sistema\s*espec[ií]fico)/i.test(
         lowerMessage
       )
     ) {
-      return "💳 **FORMAS DE PAGAMENTO**\n\n• Pix\n• Dinheiro\n• Débito e crédito por aproximação\n\n⚠️ O pagamento é feito diretamente pelo aplicativo no celular.\nNão utilizamos maquininha física.";
+      const service = services[5];
+      return `🔧 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n🎯 *Solução perfeita para necessidades específicas sem desenvolver sistemas complexos!*`;
     }
 
-    // Localização
     if (
-      /(localização|onde\s*fica|endereço|entrega|delivery)/i.test(lowerMessage)
-    ) {
-      return "📍 **NOSSA LOCALIZAÇÃO**\n\nEstamos localizados no coração da cidade!\n\n*Delivery disponível para região central.*\n\nPara saber o endereço exato e valor do delivery, entre em contato pelo WhatsApp: (99) 99999-9999";
-    }
-
-    // Falar com atendente
-    if (
-      /(atendente|humano|pessoa|telefone|whatsapp|contato)/i.test(lowerMessage)
-    ) {
-      return "📞 **FALE DIRETAMENTE CONOSCO**\n\nWhatsApp: (99) 99999-9999\n\nHorário de atendimento:\nSegunda a Sábado: 8h às 20h\nDomingo: 9h às 18h\n\nEstamos aqui para te atender! ✨";
-    }
-
-    // Fazer pedido / Finalização
-    if (
-      /(fazer\s*pedido|quero\s*pedir|encomendar|finalizar)/i.test(
+      /(pagebot|chatbot|whatsapp\s*bot|atendimento\s*autom[aá]tico)/i.test(
         lowerMessage
-      ) ||
-      lowerMessage.includes("pedido")
+      )
     ) {
-      if (currentOrder.length === 0) {
-        return "🛒 Para fazer um pedido, primeiro escolha os itens do cardápio!\n\nDiga-me o que você gostaria ou peça para ver o cardápio completo 😊";
-      } else {
-        const orderSummary = currentOrder
-          .map((item) => `• ${item.name} - ${item.price}`)
-          .join("\n");
-        const total = currentOrder
-          .reduce((sum, item) => {
-            const price = parseFloat(
-              item.price.replace("R$ ", "").replace(",", ".")
-            );
-            return sum + price;
-          }, 0)
-          .toFixed(2)
-          .replace(".", ",");
-
-        return `🛒 **RESUMO DO SEU PEDIDO** ✨\n\n${orderSummary}\n\n💰 **Total: R$ ${total}**\n\n📲 **Clique no botão abaixo para enviar tudo direto no nosso WhatsApp e confirmar seu pedido!**\n\nOu continue adicionando mais itens 😋`;
-      }
+      const service = services[6];
+      return `💬 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n🤖 *Atenda seus clientes 24/7 sem aumentar sua equipe!*`;
     }
 
-    // Adicionar item ao pedido
-    const foundProduct = cardapio
-      .flatMap((cat) => cat.items)
-      .find(
-        (item) =>
-          lowerMessage.includes(item.name.toLowerCase()) ||
-          item.name.toLowerCase().includes(lowerMessage)
-      );
+    if (
+      /(site\s*personalizado|sob\s*medida|exclusivo|customizado)/i.test(
+        lowerMessage
+      )
+    ) {
+      const service = services[7];
+      return `🎨 **${service.name.toUpperCase()}**\n\n${
+        service.description
+      }\n\n✨ **PRINCIPAIS FUNCIONALIDADES:**\n${service.features
+        .map((f) => `• ${f}`)
+        .join("\n")}\n\n💰 **INVESTIMENTO:** ${service.price}\n⏱️ **PRAZO:** ${
+        service.deliveryTime
+      }\n\n🌟 *Tenha um site único que realmente representa sua marca!*`;
+    }
 
-    if (foundProduct) {
-      setCurrentOrder((prev) => [...prev, foundProduct]);
-      return `✅ **${foundProduct.name}** adicionado ao seu pedido!\n\n${foundProduct.description}\nPreço: ${foundProduct.price}\n\nDeseja adicionar mais alguma coisa? 😊`;
+    // Preços e orçamentos
+    if (
+      /(quanto\s*custa|preço|preco|valor|orçamento|orçamento|quanto\s*é|custo)/i.test(
+        lowerMessage
+      )
+    ) {
+      return `💰 **VALORES E ORÇAMENTOS**\n\nOs valores variam conforme o serviço e complexidade do projeto:\n\n🌐 **Landing Pages:** A partir de R$ 1.500\n🏢 **Sites Institucionais:** A partir de R$ 3.000\n🤖 **Automações:** Sob consulta\n📱 **Cardápios Digitais:** A partir de R$ 800/mês\n⚡ **MVPs:** Sob consulta\n🔧 **Microserviços:** Sob consulta\n💬 **PageBot:** A partir de R$ 300/mês\n🎨 **Sites Personalizados:** Sob consulta\n\n📞 *Para um orçamento preciso, entre em contato com nossa equipe!*`;
+    }
+
+    // Tempo de entrega
+    if (
+      /(tempo\s*de\s*entrega|prazo|quando\s*fica\s*pronto|quanto\s*tempo)/i.test(
+        lowerMessage
+      )
+    ) {
+      return `⏱️ **PRAZOS DE ENTREGA**\n\nOs prazos variam conforme o serviço:\n\n🌐 **Landing Pages:** 5-7 dias úteis\n🏢 **Sites Institucionais:** 10-15 dias úteis\n🤖 **Automações:** 7-14 dias úteis\n📱 **Cardápios Digitais:** 3-5 dias úteis\n⚡ **MVPs:** 15-30 dias úteis\n🔧 **Microserviços:** Varia conforme complexidade\n💬 **PageBot:** 3-7 dias úteis\n🎨 **Sites Personalizados:** 20-40 dias úteis\n\n🚀 *Trabalhamos com metodologia ágil para entregar mais rápido!*`;
+    }
+
+    // Falar com especialista
+    if (
+      /(falar\s*com\s*especialista|atendente|humano|consultor|vendedor|contato|whatsapp|telefone)/i.test(
+        lowerMessage
+      )
+    ) {
+      return `📞 **FALE COM NOSSA EQUIPE**\n\n💬 **WhatsApp:** (99) 99999-9999\n📧 **E-mail:** contato@nortedigital.com\n🌐 **Site:** www.nortedigital.com\n\n🕒 **Horário de atendimento:**\nSegunda a Sexta: 8h às 18h\nSábado: 9h às 12h\n\n✨ *Nossos especialistas estão prontos para entender sua necessidade e propor a melhor solução!*`;
+    }
+
+    // Processo de trabalho
+    if (
+      /(como\s*trabalham|processo|metodologia|etapas|passo\s*a\s*passo)/i.test(
+        lowerMessage
+      )
+    ) {
+      return `🔄 **NOSSO PROCESSO DE TRABALHO**\n\n1️⃣ **Briefing:** Entendemos sua necessidade\n2️⃣ **Proposta:** Apresentamos a solução ideal\n3️⃣ **Contrato:** Formalizamos nossa parceria\n4️⃣ **Desenvolvimento:** Criamos sua solução\n5️⃣ **Revisões:** Ajustamos conforme seu feedback\n6️⃣ **Entrega:** Lançamos seu projeto\n7️⃣ **Suporte:** Acompanhamos pós-entrega\n\n🔧 *Trabalhamos com metodologia ágil e transparência total!*`;
+    }
+
+    // Manutenção e suporte
+    if (
+      /(manutenç[aã]o|suporte|atualizaç[aã]o|garantia|pós\s*venda)/i.test(
+        lowerMessage
+      )
+    ) {
+      return `🔧 **SUPORTE E MANUTENÇÃO**\n\nOferecemos diferentes planos de suporte:\n\n✅ **Suporte Básico:** Correções de emergência\n✅ **Suporte Intermediário:** Atualizações mensais\n✅ **Suporte Completo:** Manutenção preventiva + evolutiva\n\n📞 *Todos nossos projetos incluem garantia de 30 dias e suporte inicial!*`;
     }
 
     // Agradecimento
     if (/(obrigad[ao]|valeu|grato|agradeço|obrigado)/i.test(lowerMessage)) {
-      return "🫡 Por nada! É um prazer te atender!\n\nQualquer dúvida, estou à disposição. Bom apetite! 😋✨";
+      return "🤝 Por nada! Fico feliz em ajudar!\n\nQualquer dúvida sobre nossos serviços, estou à disposição!\n\n✨ *A Norte Digital está pronta para transformar sua ideia em realidade!* 🚀";
     }
 
     // Fallback
     const fallbackResponses = [
-      "😊 Desculpe, não entendi completamente. Poderia reformular sua pergunta?",
-      "🤔 Hmm, não tenho certeza sobre isso. Gostaria de ver nosso cardápio ou saber sobre formas de pagamento?",
-      "😅 Ainda estou aprendendo! Você pode perguntar sobre nosso cardápio, fazer um pedido ou formas de pagamento.",
+      "🤔 Desculpe, não entendi completamente. Você pode perguntar sobre nossos serviços, valores ou processos de trabalho!",
+      "💡 Posso te ajudar com informações sobre:\n• Nossos serviços de desenvolvimento\n• Automações e chatbots\n• Valores e prazos\n• Como trabalhamos",
+      "🚀 Sou especializado em explicar os serviços da Norte Digital! Que tal perguntar sobre:\n- Landing Pages\n- Sites Institucionais\n- Cardápios Digitais\n- PageBot (nosso chatbot)\n- Ou outros serviços?",
     ];
 
     return fallbackResponses[
@@ -594,49 +629,36 @@ export default function Chatbot() {
     }
   };
 
-  const sendToWhatsApp = () => {
-    if (currentOrder.length === 0) return;
-
-    const orderSummary = currentOrder
-      .map((item) => `${item.name} - ${item.price}`)
-      .join("%0A");
-    const total = currentOrder
-      .reduce((sum, item) => {
-        const price = parseFloat(
-          item.price.replace("R$ ", "").replace(",", ".")
-        );
-        return sum + price;
-      }, 0)
-      .toFixed(2);
-
-    const message = `Olá! Gostaria de fazer um pedido:%0A%0A${orderSummary}%0A%0ATotal: R$ ${total}%0A%0AEnviado via PageBot Mini Salgados`;
-
-    window.open(`https://wa.me/559999999999?text=${message}`, "_blank");
+  const contactWhatsApp = () => {
+    const message =
+      "Olá! Gostaria de saber mais sobre os serviços da Norte Digital.";
+    window.open(
+      `https://wa.me/559999999999?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {isOpen ? (
-        <div className="w-[95vw] max-w-md h-[80vh] bg-[#F5F1EA] rounded-lg shadow-xl flex flex-col overflow-hidden border border-gray-200">
-          <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1A1A1A] text-white px-3 py-2 rounded-t-lg flex justify-between items-center">
+        <div className="w-[95vw] max-w-md h-[80vh] bg-gradient-to-b from-blue-50 to-white rounded-lg shadow-xl flex flex-col overflow-hidden border border-blue-100">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-2 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <div className="bg-white/85 p-1.5 rounded-full">
+              <div className="bg-white p-1.5 rounded-full">
                 <div className="w-5 h-5 flex items-center justify-center">
-                  <span className="text-[#2C2C2C] font-bold text-xs">MS</span>
+                  <span className="text-blue-600 font-bold text-xs">ND</span>
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold text-sm">
-                  Mini Salgados & Grandes Desejos
-                </h3>
-                <p className="text-xs text-green-400">● Online</p>
+                <h3 className="font-semibold text-sm">Norte Digital</h3>
+                <p className="text-xs text-green-300">● Online</p>
               </div>
             </div>
 
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setIsAudioEnabled(!isAudioEnabled)}
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className="text-white hover:text-blue-200 transition-colors cursor-pointer"
                 aria-label={isAudioEnabled ? "Desativar áudio" : "Ativar áudio"}
               >
                 {isAudioEnabled ? (
@@ -647,20 +669,20 @@ export default function Chatbot() {
               </button>
               <button
                 onClick={toggleVoiceInput}
-                className={`text-white hover:text-gray-300 transition-colors cursor-pointer ${
+                className={`text-white hover:text-blue-200 transition-colors cursor-pointer ${
                   isListening ? "animate-pulse" : ""
                 }`}
                 aria-label={isListening ? "Parar gravação" : "Iniciar gravação"}
               >
                 {isListening ? (
-                  <RiMicFill className="w-5 h-5 text-red-400" />
+                  <RiMicFill className="w-5 h-5 text-red-300" />
                 ) : (
                   <RiMicOffFill className="w-5 h-5" />
                 )}
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className="text-white hover:text-blue-200 transition-colors cursor-pointer"
                 aria-label="Fechar chat"
               >
                 <RiChatDeleteFill className="w-5 h-5" />
@@ -668,7 +690,7 @@ export default function Chatbot() {
             </div>
           </div>
 
-          <div className="flex-1 p-2 overflow-y-auto bg-[#F9F7F3]">
+          <div className="flex-1 p-2 overflow-y-auto bg-white">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -679,8 +701,8 @@ export default function Chatbot() {
                 <div
                   className={`max-w-[85%] px-4 rounded-3xl py-4 ${
                     message.sender === "user"
-                      ? "bg-white text-gray-800 rounded-br-none border border-gray-200"
-                      : "bg-[#2C2C2C] text-white rounded-bl-none"
+                      ? "bg-blue-100 text-gray-800 rounded-br-none border border-blue-200"
+                      : "bg-gradient-to-r from-blue-50 to-white text-gray-800 rounded-bl-none border border-blue-100 shadow-sm"
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line">{message.text}</p>
@@ -700,8 +722,8 @@ export default function Chatbot() {
                     <p
                       className={`text-xs ${
                         message.sender === "user"
-                          ? "text-gray-500"
-                          : "text-gray-300"
+                          ? "text-blue-600"
+                          : "text-gray-500"
                       }`}
                     >
                       {formatTime(message.timestamp)}
@@ -711,14 +733,14 @@ export default function Chatbot() {
                       <div className="flex space-x-1 ml-2">
                         <button
                           onClick={() => handleFeedback(message.id, true)}
-                          className="text-xs text-green-300 hover:text-green-100 cursor-pointer"
+                          className="text-xs text-green-500 hover:text-green-600 cursor-pointer"
                           title="Resposta útil"
                         >
                           👍
                         </button>
                         <button
                           onClick={() => handleFeedback(message.id, false)}
-                          className="text-xs text-red-300 hover:text-red-100 cursor-pointer"
+                          className="text-xs text-red-500 hover:text-red-600 cursor-pointer"
                           title="Resposta não útil"
                         >
                           👎
@@ -732,15 +754,15 @@ export default function Chatbot() {
 
             {isTyping && (
               <div className="flex justify-start mb-2">
-                <div className="bg-[#2C2C2C] text-white p-6 rounded-lg rounded-bl-none shadow-sm">
+                <div className="bg-gradient-to-r from-blue-50 to-white text-gray-800 p-6 rounded-lg rounded-bl-none shadow-sm border border-blue-100">
                   <div className="flex space-x-1 items-center">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce"></div>
                     <div
-                      className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"
+                      className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce"
                       style={{ animationDelay: "0.2s" }}
                     ></div>
                     <div
-                      className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"
+                      className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce"
                       style={{ animationDelay: "0.4s" }}
                     ></div>
                   </div>
@@ -748,41 +770,31 @@ export default function Chatbot() {
               </div>
             )}
 
-            {currentOrder.length > 0 && (
-              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-semibold text-gray-800">🛒 Seu Pedido</h4>
-                  <button
-                    onClick={() => setCurrentOrder([])}
-                    className="text-xs text-red-500 hover:text-red-700 cursor-pointer"
-                  >
-                    Limpar
-                  </button>
-                </div>
-                {currentOrder.map((item, index) => (
-                  <div key={index} className="text-sm text-gray-600 mb-1">
-                    • {item.name} - {item.price}
-                  </div>
-                ))}
-                <button
-                  onClick={sendToWhatsApp}
-                  className="mt-3 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-sm font-medium cursor-pointer transition-colors"
-                >
-                  📲 Enviar pedido no WhatsApp
-                </button>
-              </div>
-            )}
+            <div className="mt-4 p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200 shadow-sm">
+              <h4 className="font-semibold text-blue-800 mb-2">
+                📱 Fale Conosco
+              </h4>
+              <p className="text-sm text-gray-700 mb-3">
+                Quer um orçamento personalizado ou tem dúvidas específicas?
+              </p>
+              <button
+                onClick={contactWhatsApp}
+                className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg text-sm font-medium cursor-pointer transition-colors flex items-center justify-center"
+              >
+                <span className="mr-2">💬</span> Conversar no WhatsApp
+              </button>
+            </div>
 
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="p-2 border-t border-gray-200 bg-white">
+          <div className="p-2 border-t border-blue-100 bg-white">
             <div className="flex flex-wrap gap-1.5 mb-2 overflow-x-auto pb-1">
               {quickReplies.map((reply, index) => (
                 <button
                   key={index}
                   onClick={() => handleQuickReply(reply)}
-                  className="text-xs bg-[#2C2C2C] cursor-pointer hover:bg-gray-800 text-white px-2 py-1 rounded-full whitespace-nowrap transition-colors"
+                  className="text-xs bg-gradient-to-r from-blue-500 to-blue-600 cursor-pointer hover:from-blue-600 hover:to-blue-700 text-white px-2 py-1 rounded-full whitespace-nowrap transition-all duration-200 shadow-sm"
                 >
                   {reply}
                 </button>
@@ -794,13 +806,13 @@ export default function Chatbot() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-                placeholder="Digite sua mensagem..."
-                className="flex-1 border border-gray-300 rounded-l-md p-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#2C2C2C]"
+                placeholder="Digite sua dúvida sobre nossos serviços..."
+                className="flex-1 border border-blue-200 rounded-l-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim()}
-                className="bg-[#2C2C2C] text-white px-3 rounded-r-md hover:bg-gray-800 focus:outline-none disabled:opacity-50 transition-colors disabled:cursor-not-allowed cursor-pointer"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 rounded-r-md hover:from-blue-600 hover:to-blue-700 focus:outline-none disabled:opacity-50 transition-all duration-200 disabled:cursor-not-allowed cursor-pointer shadow-sm"
               >
                 Enviar
               </button>
@@ -810,25 +822,14 @@ export default function Chatbot() {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-[#2C2C2C] text-white cursor-pointer rounded-full p-3 shadow-lg hover:bg-gray-800 focus:outline-none transition-colors"
-          aria-label="Abrir chat"
+          className="bg-gradient-to-r from-black to-green-700 text-white cursor-pointer rounded-full p-3 shadow-lg hover:from-black hover:to-green-800 focus:outline-none transition-all duration-200"
+          aria-label="Abrir chat da Norte Digital"
         >
           <div className="relative">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="max-md:h-8 max-md:w-8 w-10 h-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              />
-            </svg>
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <span className="font-bold text-lg">N</span>
+            </div>
+            <div className="absolute -top-4 -right-1 w-4 h-4 bg-green-500 rounded-full"></div>
           </div>
         </button>
       )}
