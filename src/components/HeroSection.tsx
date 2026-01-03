@@ -18,7 +18,7 @@ export function HeroSection() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section className="w-full h-auto">
+    <section className="w-full h-auto py-14">
       <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center hero-gradient overflow-hidden py-35 px-4">
         {/* Grid Pattern */}
         <div className="absolute inset-0 grid-pattern opacity-50" />
@@ -143,7 +143,6 @@ export function HeroSection() {
                 </a>
               </div>
 
-      
               {/* Tagline */}
               <p
                 className="text-accent font-semibold mt-8 animate-fade-up"

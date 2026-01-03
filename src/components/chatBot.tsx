@@ -794,7 +794,7 @@ export default function Chatbot() {
                 <button
                   key={index}
                   onClick={() => handleQuickReply(reply)}
-                  className="text-xs bg-gradient-to-r from-blue-500 to-blue-600 cursor-pointer hover:from-blue-600 hover:to-blue-700 text-white px-2 py-1 rounded-full whitespace-nowrap transition-all duration-200 shadow-sm"
+                  className="text-xs bg-gradient-to-r from-green-500 to-green-600 cursor-pointer hover:from-green-600 hover:to-green-700 text-white px-2 py-1 rounded-full whitespace-nowrap transition-all duration-200 shadow-sm"
                 >
                   {reply}
                 </button>
